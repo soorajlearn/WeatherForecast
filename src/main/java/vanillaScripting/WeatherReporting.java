@@ -43,9 +43,11 @@ public class WeatherReporting {
 		WebElement city = wt.until(ExpectedConditions
 				.visibilityOf(dr.findElement(By.xpath("//div[@class='cityText' and text()='Mangalore']"))));
 		city.click();
-		uiCel = Integer.parseInt(dr.findElementByXPath("//b[starts-with(text(),'Temp in Degrees')]").getText().replaceAll("\\D+", ""));
+		String uiCelsius = dr.findElementByXPath("//b[starts-with(text(),'Temp in Degrees')]").getText().replaceAll("\\D+", "");
+		System.out.println(uiCelsius);
+		uiCel = Integer.parseInt(uiCelsius);
 		uiFar = Integer.parseInt(dr.findElementByXPath("//b[starts-with(text(),'Temp in Fahrenheit')]").getText().replaceAll("\\D+", ""));
-		Thread.sleep(500);
+		Thread.sleep(5000);
 		dr.close();
 		return this;
 	}

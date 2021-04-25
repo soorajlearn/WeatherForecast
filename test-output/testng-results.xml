@@ -2,16 +2,16 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="19062" started-at="2021-04-24T07:20:01Z" finished-at="2021-04-24T07:20:20Z">
+  <suite name="Default suite" duration-ms="27535" started-at="2021-04-24T23:47:53Z" finished-at="2021-04-24T23:48:21Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="19062" started-at="2021-04-24T07:20:01Z" finished-at="2021-04-24T07:20:20Z">
-      <class name="vanilla.WeatherForecast">
-        <test-method status="PASS" signature="weatherComparator()[pri:0, instance:vanilla.WeatherForecast@2f686d1f]" name="weatherComparator" duration-ms="19035" started-at="2021-04-24T07:20:01Z" finished-at="2021-04-24T07:20:20Z">
+    <test name="Default test" duration-ms="27535" started-at="2021-04-24T23:47:53Z" finished-at="2021-04-24T23:48:21Z">
+      <class name="vanillaScripting.WeatherReporting">
+        <test-method status="PASS" signature="runTestCase()[pri:0, instance:vanillaScripting.WeatherReporting@6d4b1c02]" name="runTestCase" duration-ms="27505" started-at="2021-04-24T23:47:53Z" finished-at="2021-04-24T23:48:21Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- weatherComparator -->
-      </class> <!-- vanilla.WeatherForecast -->
+        </test-method> <!-- runTestCase -->
+      </class> <!-- vanillaScripting.WeatherReporting -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
