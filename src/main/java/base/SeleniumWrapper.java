@@ -14,6 +14,7 @@ public class SeleniumWrapper implements Browser, Element {
 	public static RemoteWebDriver dr;
 	public static WebDriverWait wt;
 	public static int uiCel, uiFar;
+	public static String url, browser;
 
 	public void sendKeys(WebElement wb, String input) {
 		wb.clear();

@@ -11,12 +11,17 @@ import io.restassured.specification.RequestLogSpecification;
 import io.restassured.specification.RequestSpecification;
 
 public class RestAssuredWrapper {
+	
+	public static String URI, resources;
+	
+	
 
 	private static ContentType getContentType() {
 		return ContentType.JSON;
 	}
 
 	public static RequestSpecification setLogs() {
+		RestAssured.baseURI = URI;
 		RequestLogSpecification log = RestAssured.given().log();
 		return log.all().contentType(getContentType());
 	}
@@ -29,7 +34,7 @@ public class RestAssuredWrapper {
 		return setLogs().get();
 	}
 
-	public static Response getWithHeader(Map<String, String> params, String URL) {
+	public static Response getWithQueryParams(Map<String, String> params, String URL) {
 		return setLogs().queryParams(params).get(URL);
 	}
 
@@ -45,7 +50,7 @@ public class RestAssuredWrapper {
 	public static String getContentWithKey(Response response, String key) {
 		if (response.getContentType().contains("json")) {
 			JsonPath jsonPath = response.jsonPath();
-			return (String) jsonPath.get(key);
+			return jsonPath.get(key).toString();
 		} else {
 			return null;
 		}

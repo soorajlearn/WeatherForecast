@@ -31,10 +31,11 @@ public class WeatherPage extends SeleniumWrapper {
 		return this;
 	}
 
-	public WeatherPage getTemp() {
+	public WeatherPage getTemp() throws InterruptedException {
+		Thread.sleep(1000);
 		WebElement deg = findElement("xpath", "//b[starts-with(text(),'Temp in Degrees')]");
 		uiCel = Integer.parseInt(getText(deg).replaceAll("\\D+", ""));
-		
+
 		WebElement far = findElement("xpath", "//b[starts-with(text(),'Temp in Fahrenheit')]");
 		uiFar = Integer.parseInt(getText(far).replaceAll("\\D+", ""));
 		
