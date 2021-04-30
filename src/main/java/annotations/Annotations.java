@@ -32,14 +32,14 @@ public class Annotations extends SeleniumWrapper {
 		System.out.println(browser);
 		launchBrowser(browser, "./drivers/chromedriver.exe");
 		maximize();
-		dr.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		wt = new WebDriverWait(dr, 20);
+		getDriver().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		wt = new WebDriverWait(getDriver(), 20);
 		get(url);
 	}
 
 	@AfterMethod
 	public void after() {
-		//closeBrowser();
+		closeBrowser();
 	}
 
 }

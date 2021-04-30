@@ -6,8 +6,9 @@
       <class name="testcases.UITestCase">
         <methods>
           <include name="setConfigProperties"/>
+          <include name="before"/>
           <include name="after"/>
-          <include name="TC001" invocation-numbers="0 1"/>
+          <include name="TC001" invocation-numbers="1"/>
         </methods>
       </class> <!-- testcases.UITestCase -->
     </classes>

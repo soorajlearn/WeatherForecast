@@ -9,7 +9,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import design.Browser;
 import design.Element;
 
-public class SeleniumWrapper implements Browser, Element {
+public class SeleniumWrapper extends ThreadLocalImpl implements Browser, Element {
 	
 	public static RemoteWebDriver dr;
 	public static WebDriverWait wt;
@@ -29,11 +29,11 @@ public class SeleniumWrapper implements Browser, Element {
 	public WebElement findElement(String type, String loc) {
 		switch (type) {
 		case "id":
-			return dr.findElement(By.id(loc));
+			return getDriver().findElement(By.id(loc));
 		case "xpath":
-			return dr.findElement(By.xpath(loc));
+			return getDriver().findElement(By.xpath(loc));
 		case "linktxt":
-			return dr.findElement(By.linkText(loc));
+			return getDriver().findElement(By.linkText(loc));
 		}
 		return null;
 	}
@@ -46,23 +46,23 @@ public class SeleniumWrapper implements Browser, Element {
 		switch (browser) {
 		case "chrome":
 			System.setProperty("webdriver.chrome.driver", path);
-			dr = new ChromeDriver();
+			setDriver(new ChromeDriver());
 		}
 		
 	}
 
 	public void maximize() {
-		dr.manage().window().maximize();
+		getDriver().manage().window().maximize();
 		
 	}
 
 	public void get(String url) {
-		dr.get(url);
+		getDriver().get(url);
 		
 	}
 
 	public void closeBrowser() {
-		dr.close();
+		getDriver().close();
 		
 	}
 
