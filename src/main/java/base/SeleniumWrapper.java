@@ -3,6 +3,7 @@ package base;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -45,8 +46,10 @@ public class SeleniumWrapper extends ThreadLocalImpl implements Browser, Element
 	public void launchBrowser(String browser, String path) {
 		switch (browser) {
 		case "chrome":
+			ChromeOptions options = new ChromeOptions();
+			options.addArguments("--disable-notifications");
 			System.setProperty("webdriver.chrome.driver", path);
-			setDriver(new ChromeDriver());
+			setDriver(new ChromeDriver(options));
 		}
 		
 	}

@@ -3,14 +3,14 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="testcases.UITestCase">
+      <class name="testcases.UIAndAPIComparison">
         <methods>
           <include name="setConfigProperties"/>
           <include name="before"/>
+          <include name="TC003" invocation-numbers="1"/>
           <include name="after"/>
-          <include name="TC001" invocation-numbers="1"/>
         </methods>
-      </class> <!-- testcases.UITestCase -->
+      </class> <!-- testcases.UIAndAPIComparison -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

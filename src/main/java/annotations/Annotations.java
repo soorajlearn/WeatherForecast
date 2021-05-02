@@ -18,7 +18,7 @@ public class Annotations extends SeleniumWrapper {
 	
 	@DataProvider(parallel = false)
 	public Object[] data() throws FileNotFoundException, IOException {
-		return DataInputProvider.getSheet("TC001");
+		return DataInputProvider.getSheet("TestData");
 		
 	}
 	

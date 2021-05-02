@@ -13,7 +13,7 @@ import io.restassured.response.Response;
 public class APITestCase extends Annotations{
 
 	@Test(dataProvider="data")
-	public void TC002(String city, String units) {
+	public void TC002(String city, String units, String tolerance) {
 		
 
 
