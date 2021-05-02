@@ -13,6 +13,12 @@ import org.testng.annotations.Test;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import io.restassured.RestAssured;
 
+
+/*
+ * This is the vanilla scripting for the given Weather reporting problem
+ * 
+ * */
+
 public class WeatherReporting {
 	
 	int uiCel, uiFar;

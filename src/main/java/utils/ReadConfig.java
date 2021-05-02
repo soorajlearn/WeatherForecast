@@ -12,6 +12,7 @@ import base.SeleniumWrapper;
 
 public class ReadConfig {
 	
+	/* Reading Configuration file and assigning to project level variables*/
 	
 	public static void readProperty() throws FileNotFoundException, IOException{
 		
