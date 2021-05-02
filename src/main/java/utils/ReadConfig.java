@@ -22,6 +22,7 @@ public class ReadConfig {
 		SeleniumWrapper.browser = prop.get("browser").toString();
 		RestAssuredWrapper.URI = prop.get("baseURI").toString();
 		RestAssuredWrapper.resources = prop.get("resources").toString();
+		RestAssuredWrapper.apiKey = prop.get("apiKey").toString();
 		
 		
 	}

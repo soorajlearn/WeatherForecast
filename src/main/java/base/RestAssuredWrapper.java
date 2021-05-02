@@ -12,7 +12,7 @@ import io.restassured.specification.RequestSpecification;
 
 public class RestAssuredWrapper {
 	
-	public static String URI, resources;
+	public static String URI, resources, apiKey;
 	
 	
 

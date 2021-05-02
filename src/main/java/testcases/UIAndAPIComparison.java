@@ -21,7 +21,7 @@ public class UIAndAPIComparison extends Annotations{
 		
 		Map<String, String> map = new HashMap<>();
 		map.put("q", city);
-		map.put("appid", "7fe67bf08c80ded756e598d6f8fedaea");
+		map.put("appid", RestAssuredWrapper.apiKey);
 		map.put("units", units);
 		
 		new HomePage().goToWeather().searchCity(city).selectCity().expandCityDetail().getTemp();
@@ -31,10 +31,10 @@ public class UIAndAPIComparison extends Annotations{
 		String temp  = RestAssuredWrapper.getContentWithKey(resp, "main.temp");
 		
 		if(units.equals("metric")){
-			Assert.assertTrue(Math.abs((uiCel)-Float.parseFloat(temp))<Integer.parseInt(tolerance),"Actual UI output :" + uiCel + "Actual API output" + temp  );				
+			Assert.assertTrue(Math.abs((uiCel)-Float.parseFloat(temp))<Integer.parseInt(tolerance),"Actual UI output: " + uiCel + " Actual API output: " + temp  );				
 			//Assert.assertEquals(Integer.toString(uiCel), temp);
 		}else if(units.equals("imperial")){
-			Assert.assertTrue(Math.abs((uiFar)-Float.parseFloat(temp))<Integer.parseInt(tolerance),"Actual UI output :" + uiFar + "Actual API output" + temp );
+			Assert.assertTrue(Math.abs((uiFar)-Float.parseFloat(temp))<Integer.parseInt(tolerance),"Actual UI output: " + uiFar + " Actual API output: " + temp );
 			//Assert.assertEquals(Integer.toString(uiFar), temp);
 		}
 	}

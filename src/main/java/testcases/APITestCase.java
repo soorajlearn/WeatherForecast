@@ -3,6 +3,7 @@ package testcases;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.testng.Reporter;
 import org.testng.annotations.Test;
 
 import annotations.Annotations;
@@ -19,14 +20,18 @@ public class APITestCase extends Annotations{
 
 		Map<String, String> map = new HashMap<>();
 		map.put("q", city);
-		map.put("appid", "7fe67bf08c80ded756e598d6f8fedaea");
+		map.put("appid", RestAssuredWrapper.apiKey);
 		map.put("units", units);
 		
 		Response resp = RestAssuredWrapper.getWithQueryParams(map, RestAssuredWrapper.resources);
 		
 		String temp  = RestAssuredWrapper.getContentWithKey(resp, "main.temp");
 		
-		System.out.println(temp);
+		if (units.equals("metric")) {
+			Reporter.log("Temperature of " + city + " in " + units + " is " + temp);
+		} else if (units.equals("imperial")) {
+			Reporter.log("Temperature of " + city + " in " + units + " is " + temp);
+		}
 	}
 
 }

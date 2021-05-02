@@ -1,0 +1,12 @@
+-------------------------------------------------------------------------------
+Test set: TestSuite
+-------------------------------------------------------------------------------
+Tests run: 6, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 130.955 s <<< FAILURE! - in TestSuite
+TC003(testcases.UIAndAPIComparison)  Time elapsed: 21.987 s  <<< FAILURE!
+java.lang.AssertionError: Actual UI output: 32Actual API output: 28 expected [true] but found [false]
+	at testcases.UIAndAPIComparison.TC003(UIAndAPIComparison.java:34)
+
+TC003(testcases.UIAndAPIComparison)  Time elapsed: 16.613 s  <<< FAILURE!
+java.lang.AssertionError: Actual UI output: 99Actual API output: 87.8 expected [true] but found [false]
+	at testcases.UIAndAPIComparison.TC003(UIAndAPIComparison.java:37)
+
